@@ -1,6 +1,6 @@
 import { BrowserRouter, Link, Route, Routes } from "react-router-dom";
 import "./App.css";
-import { MovieDetails, Home } from "./pages";
+import { DetailsAndBook, Home } from "./pages";
 
 
 function App() {
@@ -9,7 +9,7 @@ function App() {
     <>
       <BrowserRouter>
           <Routes>
-            <Route path="/movie-details" element={< MovieDetails/>} />
+            <Route path="/movie-details/:id" element={< DetailsAndBook/>} />
             <Route path="/" element={<Home />} />
           </Routes>
       </BrowserRouter>

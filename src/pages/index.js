@@ -1,7 +1,7 @@
 import Home from "./Home";
-import MovieDetails from "./MovieDetails";
+import DetailsAndBook from "./DetailsAndBook";
 
 export {
     Home,
-    MovieDetails
+    DetailsAndBook
 }
