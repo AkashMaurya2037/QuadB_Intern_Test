@@ -3,44 +3,67 @@ import { MovieBookingForm, MovieDetails } from "../components";
 import { useLocation, useParams } from "react-router-dom";
 
 function DetailsAndBook(props) {
-  const params = useParams();
-  const { id } = params;
-  
   const [datas, setDatas] = useState([]);
+  const [idParam, setIdParam] = useState(null);
 
+  const params = useParams();
   const location = useLocation();
-  const redirectData = location.state?.data;
+  // redirectDataStoring()
 
   const getData = async () => {
-    const response = await fetch("https://api.tvmaze.com/search/shows?q=all");
-    const responseJson = await response.json();
-    console.log(response)
-    const desiredData = await responseJson.find((obj) => obj.show.id === 42181);
+    // console.log("getData Runned");
 
-    setDatas(await desiredData)
-    console.log(datas, "UseState")
+    const redirectData = location.state?.data;
+
+    const { id } = params;
+
+    const convertId = Number(id);
+
+    setIdParam(convertId);
+
+    if (!id) {
+      console.log("Data not exist");
+      // console.log("Go to Home Page");
+    } else if(!redirectData && id){
+      try {
+        const response = await fetch(
+          "https://api.tvmaze.com/search/shows?q=all"
+        );
+        const responseJson = await response.json();
+        console.log(response);
+        const desiredData = await responseJson.find(
+          (obj) => obj.show.id == idParam
+        );
+        setDatas(desiredData);
+        console.log(datas, "UseState");
+      } catch (error) {
+        console.log(err);
+      }
+    }
+     else if (convertId == redirectData.show.id) {
+      console.log(
+        "convertId == redirectData.show.id",
+        convertId == redirectData.show.id
+      );
+      setDatas(redirectData);
+      console.log(datas, "Set Redirected Data");
+    } else {
+      console.log(redirectData.show.id, "data does not match");
+
+      
+    }
   };
 
   useEffect(() => {
     getData();
-
   }, []);
-
-
-  console.log(redirectData, "Data");
-  // console.warn(id);
-
-  // console.log(location, "Location");
-
-
-
-  // console.log(state)
 
   return (
     <>
       <MovieDetails />
-      {/* <div>{datas === undefined ? <p>Go To Home Page</p> : setDatas(redirectData)}</div> */}
-      {/* <div>{datas}</div> */}
+
+      {/* <div>{datas === [] ? <p>Go To Home Page</p> : setDatas(redirectData)}</div> */}
+      {/* <div>{datas == [] ? "Empty" : datas.show.name}</div> */}
       <MovieBookingForm />
     </>
   );
