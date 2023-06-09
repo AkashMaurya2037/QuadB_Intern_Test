@@ -115,13 +115,13 @@ header {
 
 .MDContainer {
   width: 100vw;
-  height: 50vh;
+  height: 70vh;
   display: flex;
   flex-direction: column;
   margin-bottom: 60px;
   /* width: 100%; */
 
-    background-color: rgb(26, 26, 26);
+  background-color: rgb(26, 26, 26);
 }
 
 .MD2ndCon {
@@ -138,7 +138,7 @@ header {
 
 .MDBox {
   width: 100%;
-  background-color: rgb(26, 26, 26);
+  /* background-color: rgb(26, 26, 26); */
 }
 
 .MDText {
@@ -157,13 +157,13 @@ header {
   -webkit-line-clamp: 3;
 }
 
-.MDRatingBox{
+.MDRatingBox {
   -webkit-box-align: center;
-    display: flex;
-    align-items: flex-end;
+  display: flex;
+  align-items: flex-end;
 }
 
-.MDRating{
+.MDRating {
   display: inline-block;
   cursor: pointer;
   padding: 0px;
@@ -173,15 +173,42 @@ header {
 .MDRight {
   -webkit-box-flex: 1;
   flex-grow: 1;
-  padding-left: 32px;
+  padding-left: 0px;
   max-width: 520px;
 }
 
-.MDImg{
+.MDImg {
   border-radius: 16px 16px 0px 0px;
-    object-fit: cover;
-    background-color: rgb(229, 229, 229);
-    max-height: 392px;
-    min-height: 392px;
-    min-width: auto;
+  object-fit: cover;
+  background-color: rgb(229, 229, 229);
+  max-height: 392px;
+  min-height: 392px;
+  min-width: auto;
+}
+
+.starfill {
+
+  margin-top: -5px;
+  margin-right: 4px;
+  margin-left: 1px;
+}
+
+.MDOtherInfo {
+  display: flex;
+  flex-wrap: wrap;
+  color: rgb(255, 255, 255);
+  font-size: 17px;
+  font-weight: 400;
+  line-height: 24px;
+  letter-spacing: 0.2px;
+}
+
+
+
+.spanDot {
+  padding: 0px 8px;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 27px;
+  letter-spacing: 0.2px;
 }
