@@ -2,62 +2,62 @@ import React from 'react'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/css/bootstrap.css';
 
-function MovieBookingForm() {
+function MovieBookingForm({ datas }) {
  
   return (
     <>
-    <div id="booking" classname="section">
-		<div classname="section-center">
-			<div classname="container">
-				<div classname="row">
-					<div classname="booking-form">
-						<div classname="booking-bg"></div>
+    <div id="booking" className="section">
+		<div className="section-center">
+			<div className="container">
+				<div className="row">
+					<div className="booking-form">
+						<div className="booking-bg"><img className="MDImg" src={datas.show.image.medium.toString()} alt={datas.show.name} /></div>
 						<form>
-							<div classname="form-header">
+							<div className="form-header">
 								<h2>Book Your Seat</h2>
 							</div>
-							<div classname="form-group">
-								<input classname="form-control" type="text" placeholder="Enter your Name"/>
-								<span classname="form-label">Name</span>
+							<div className="form-group">
+								<input className="form-control" type="text" placeholder="Enter your Name"/>
+								<span className="form-label">Name</span>
 							</div>
-							<div classname="form-group">
-								<input classname="form-control" type="tel" placeholder="Enter your Phone number"/>
-								<span classname="form-label">Phone</span>
+							<div className="form-group">
+								<input className="form-control" type="tel" placeholder="Enter your Phone number"/>
+								<span className="form-label">Phone</span>
 							</div>
-							<div classname="form-group">
-								<input classname="form-control" type="tel" placeholder="Enter an origin location"/>
-								<span classname="form-label">Pickup Location</span>
+							<div className="form-group">
+								<input className="form-control" type="tel" placeholder="Enter an origin location"/>
+								<span className="form-label">Pickup Location</span>
 							</div>
-							<div classname="form-group">
-								<input classname="form-control" type="tel" placeholder="Enter a destination location"/>
-								<span classname="form-label">Destination Location</span>
+							<div className="form-group">
+								<input className="form-control" type="tel" placeholder="Enter a destination location" disabled/>
+								<span className="form-label">Destination Location</span>
 							</div>
-							<div classname="form-group">
-								<select classname="form-control" required>
+							<div className="form-group">
+								<select className="form-control" required>
 									<option value="" label="&nbsp;" selected hidden></option>
 									<option>1</option>
 									<option>2</option>
 									<option>3</option>
 								</select>
-								<span classname="select-arrow"></span>
-								<span classname="form-label">Passenger Numbers</span>
+								<span className="select-arrow"></span>
+								<span className="form-label">Seat Numbers</span>
 							</div>
-							<div classname="row">
-								<div classname="col-md-6">
-									<div classname="form-group">
-										<input classname="form-control" type="date" required/>
-										<span classname="form-label">Pickup Date</span>
+							<div className="row">
+								<div className="col-md-6">
+									<div className="form-group">
+										<input className="form-control" type="date" required/>
+										<span className="form-label">Pickup Date</span>
 									</div>
 								</div>
-								<div classname="col-md-6">
-									<div classname="form-group">
-										<input classname="form-control" type="time" required/>
-										<span classname="form-label">Pickup Time</span>
+								<div className="col-md-6">
+									<div className="form-group">
+										<input className="form-control" type="time" required/>
+										<span className="form-label">Pickup Time</span>
 									</div>
 								</div>
 							</div>
-							<div classname="form-btn">
-								<button classname="submit-btn">Book Now</button>
+							<div className="form-btn">
+								<button className="submit-btn">Book Now</button>
 							</div>
 						</form>
 					</div>

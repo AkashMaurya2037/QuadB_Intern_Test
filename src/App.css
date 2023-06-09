@@ -178,7 +178,7 @@ header {
 }
 
 .MDImg {
-  border-radius: 16px 16px 0px 0px;
+  border-radius: 16px 16px 16px 16px;
   object-fit: cover;
   background-color: rgb(229, 229, 229);
   max-height: 392px;
@@ -375,6 +375,7 @@ header {
 .booking-form input[type="time"].form-control:focus+.form-label {
 	opacity: 1;
 	top: 0px;
+  
 	color: #ffc600 !important;
 }
 
@@ -400,9 +401,18 @@ header {
 	border: 2px solid #ffc600;
 }
 
+.booking-bg{
+  display: flex;
+  border-radius: 5px;
+    margin: auto;
+    justify-content: center;
+    align-items: center;
+}
+
 @media only screen and (max-width: 480px) {
 	.booking-form>.booking-bg {
 		display: none;
+    
 	}
 	.booking-form>form {
 		margin-left: 0px;
