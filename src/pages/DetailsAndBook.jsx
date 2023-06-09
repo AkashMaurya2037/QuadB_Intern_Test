@@ -99,6 +99,7 @@ function DetailsAndBook(props) {
   return (
     <>
       {datas && datas.show && datas.show.id && <MovieDetails datas={datas} />}
+      
       {datas && datas.show && datas.show.id && (
         <MovieBookingForm datas={datas} />
       )}
